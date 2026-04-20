@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <!-- LOADING -->
-    <SkeletonLoader v-if="loading" />
+    <v-skeleton-loader v-if="loading" type="image, heading, paragraph" />
 
     <!-- ERROR -->
     <v-card v-else-if="error" class="pa-6 text-center">
@@ -39,7 +39,6 @@ import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import { getRocketById } from "@/api/rocket";
 import type { TRocket } from "@/types/rocket";
-import SkeletonLoader from "@/components/SkeletonLoader.vue";
 
 const route = useRoute();
 
